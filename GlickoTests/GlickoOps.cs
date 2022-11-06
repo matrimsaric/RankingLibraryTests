@@ -21,7 +21,7 @@ namespace RankingLibraryTests.GlickoTests
         {
             try
             {
-                Rating p1 = new Rating(-45, "ApClare", calculator, 2200, 200, 0.06);
+                Rating p1 = new Rating(-45,  calculator, 2200, 200, 0.06);
             }
             catch
             {
@@ -30,27 +30,27 @@ namespace RankingLibraryTests.GlickoTests
             Assert.Fail("Exception not thrown when PlayerId invalid");
 
         }
-        [TestMethod]
-        public void TestInvalidPlayerName()
-        {
-            try
-            {
-                Rating p1 = new Rating(-45, hackText, calculator, 2200, 200, 0.06);
-            }
-            catch
-            {
-                return;
-            }
-            Assert.Fail("Exception not thrown when PlayerName hacked");
+        //[TestMethod]
+        //public void TestInvalidPlayerName()
+        //{
+        //    try
+        //    {
+        //        Rating p1 = new Rating(-45,  calculator, 2200, 200, 0.06);
+        //    }
+        //    catch
+        //    {
+        //        return;
+        //    }
+        //    Assert.Fail("Exception not thrown when PlayerName hacked");
 
-        }
+        //}
 
         [TestMethod]
         public void TestInvalidRating()
         {
             try
             {
-                Rating p1 = new Rating(5, "Teresa", calculator, -59, 200, 0.06);
+                Rating p1 = new Rating(5,  calculator, -59, 200, 0.06);
             }
             catch
             {
@@ -65,7 +65,7 @@ namespace RankingLibraryTests.GlickoTests
         {
             try
             {
-                Rating p1 = new Rating(5, "Teresa", calculator, 500, -200, 0.06);
+                Rating p1 = new Rating(5,  calculator, 500, -200, 0.06);
             }
             catch
             {
@@ -80,7 +80,7 @@ namespace RankingLibraryTests.GlickoTests
         {
             try
             {
-                Rating p1 = new Rating(5, "Teresa", calculator, 500, 200, -0.05);
+                Rating p1 = new Rating(5, calculator, 500, 200, -0.05);
             }
             catch
             {
@@ -95,7 +95,7 @@ namespace RankingLibraryTests.GlickoTests
         {
             try
             {
-                Rating p1 = new Rating(5, "Teresa", calculator, 500, 200, 0.05);
+                Rating p1 = new Rating(5,  calculator, 500, 200, 0.05);
             }
             catch
             {
@@ -108,8 +108,8 @@ namespace RankingLibraryTests.GlickoTests
         [TestMethod]
         public void TestValidBestPlayerResults()
         {
-            Rating p1 = new Rating(1, "ApClare", calculator, 2200, 200, 0.06);
-            Rating p2 = new Rating(2, "ApJoss", calculator);
+            Rating p1 = new Rating(1,  calculator, 2200, 200, 0.06);
+            Rating p2 = new Rating(2,  calculator);
 
             RatingPeriodResults results = new RatingPeriodResults();
             results.AddResult(p1, p2);
